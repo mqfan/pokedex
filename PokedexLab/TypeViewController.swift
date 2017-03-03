@@ -8,4 +8,7 @@
 
 import UIKit
 
-class TypeViewController: UICollection
+class TypeViewController: UICollectionViewCell {
+    
+    @IBOutlet weak var typeBox: UIImageView!
+}

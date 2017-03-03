@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     var pokemonArray: [Pokemon] = []
     var filteredArray: [Pokemon] = []
@@ -16,7 +16,8 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         pokemonArray = PokemonGenerator.getPokemonArray()
-
+        typeCollection.delegate = self
+        typeCollection.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,6 +35,29 @@ class SearchViewController: UIViewController {
         }
         return filtered
     }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return collectionView.numberOfItems(inSection: section)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let dequeued = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        return dequeued
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        filteredArray = filteredPokemon(ofType: indexPath.count)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let dest = segue.destination as? CategoryViewController {
+            dest.pokemonArray = filteredArray
+        }
+    }
+    
 
+    @IBOutlet weak var typeCollection: UICollectionView!
 
 }
