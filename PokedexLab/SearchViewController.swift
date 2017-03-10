@@ -37,17 +37,19 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectionView.numberOfItems(inSection: section)
+//        return collectionView.numberOfItems(inSection: section)
+        return PokemonGenerator.categoryDict.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let dequeued = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        let dequeued = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! TypeViewController
+        dequeued.typeBox.image = UIImage(named: PokemonGenerator.categoryDict[indexPath.row]!)
         return dequeued
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        filteredArray = filteredPokemon(ofType: indexPath.count)
-        
+        filteredArray = filteredPokemon(ofType: indexPath.row)
+        performSegue(withIdentifier: "segue1", sender: collectionView)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -56,6 +58,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
             dest.pokemonArray = filteredArray
         }
     }
+    
     
 
     @IBOutlet weak var typeCollection: UICollectionView!

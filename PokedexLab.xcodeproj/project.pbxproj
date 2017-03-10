@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A7DB3191E72547B00B56271 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7DB3181E72547B00B56271 /* TableCell.swift */; };
 		2AC11B1F1E691762000FAE65 /* TypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC11B1E1E691762000FAE65 /* TypeViewController.swift */; };
 		3C6CFD0B1E62850E00D991A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CFD0A1E62850E00D991A0 /* AppDelegate.swift */; };
 		3C6CFD121E62850E00D991A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C6CFD111E62850E00D991A0 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A7DB3181E72547B00B56271 /* TableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 		2AC11B1E1E691762000FAE65 /* TypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeViewController.swift; sourceTree = "<group>"; };
 		3C6CFD071E62850E00D991A0 /* PokedexLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokedexLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C6CFD0A1E62850E00D991A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				3C6CFD421E62889D00D991A0 /* CategoryViewController.swift */,
 				3C6CFD441E6288BB00D991A0 /* PokemonInfoViewController.swift */,
 				2AC11B1E1E691762000FAE65 /* TypeViewController.swift */,
+				2A7DB3181E72547B00B56271 /* TableCell.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 			files = (
 				3C6CFD451E6288BB00D991A0 /* PokemonInfoViewController.swift in Sources */,
 				3C6CFD431E62889D00D991A0 /* CategoryViewController.swift in Sources */,
+				2A7DB3191E72547B00B56271 /* TableCell.swift in Sources */,
 				3C6CFD3B1E62854300D991A0 /* PokemonGenerator.swift in Sources */,
 				3C6CFD0B1E62850E00D991A0 /* AppDelegate.swift in Sources */,
 				3C6CFD411E62885100D991A0 /* SearchViewController.swift in Sources */,
